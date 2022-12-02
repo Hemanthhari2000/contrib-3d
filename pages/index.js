@@ -6,21 +6,12 @@ import PageTransition from "../components/Animations/Transition/PageTransition";
 import FloatingContribImage from "../components/Animations/FloatingImage";
 
 export default function Home() {
-  const [githubHandle, setGithubHandle] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
   const router = useRouter();
-
-  const delay = (delayInms) => {
-    return new Promise((resolve) => setTimeout(resolve, delayInms));
-  };
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    // setIsLoading(true);
-    // await delay(1000).then(() => setIsLoading(!isLoading));
-    console.log("Submitted", githubHandle);
-    router.push("/contrib-graph/");
+    let handle = event.target[0].value;
+    router.push(`/contrib-graph/${handle}`);
   };
 
   return (
