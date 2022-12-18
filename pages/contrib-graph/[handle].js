@@ -4,7 +4,7 @@ import Graph from "../../components/Graph";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 
-export default function ContribGraph({ data }) {
+export default function ContribGraph({ data, handle }) {
 	return (
 		<>
 			<PageTransition>
@@ -18,7 +18,7 @@ export default function ContribGraph({ data }) {
 						<OrbitControls />
 						<ambientLight />
 						<directionalLight />
-						<Graph data={data} />
+						<Graph data={data} handle={handle}/>
 					</Canvas>
 				</div>
 			</PageTransition>
@@ -27,11 +27,13 @@ export default function ContribGraph({ data }) {
 }
 
 export const getServerSideProps = async ({ params, res }) => {
-	const data = await getContributionsData(params.handle);
+	const handle = params.handle;
+	const data = await getContributionsData(handle);
 	res.setHeader("Cache-Control", JSON.stringify(data), "public, max-age=27000");
 	return {
 		props: {
 			data,
+			handle
 		},
 	};
 };
