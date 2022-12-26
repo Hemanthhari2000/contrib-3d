@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import theme from "../lib/theme";
 import Router from "next/router";
 import TriangleLoader from "../components/Animations/Loading/DnaLoading";
+import Navbar from "../components/Navbar";
 
 function MyApp({ Component, pageProps, router }) {
 	const [loading, setLoading] = useState(false);
@@ -43,7 +44,10 @@ function MyApp({ Component, pageProps, router }) {
 					{loading ? (
 						<TriangleLoader />
 					) : (
-						<Component {...pageProps} key={router.route} />
+						<>
+							<Navbar />
+							<Component {...pageProps} key={router.route} />
+						</>
 					)}
 				</AnimatePresence>
 			</Layout>
