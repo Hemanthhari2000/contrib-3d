@@ -4,11 +4,15 @@ import Graph from "../../components/Graph";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import Lighting from "../../components/Lighting";
+import Head from "next/head";
 
 export default function ContribGraph({ data, handle }) {
 	//   console.log(JSON.stringify(data));
 	return (
 		<>
+			<Head>
+				<title>Contrib 3D - {handle}</title>
+			</Head>
 			<PageTransition>
 				<div
 					style={{
@@ -33,7 +37,6 @@ export default function ContribGraph({ data, handle }) {
 export const getServerSideProps = async ({ params, res }) => {
 	const handle = params.handle;
 	const data = await getContributionsData(handle);
-
 
 	return {
 		props: {
