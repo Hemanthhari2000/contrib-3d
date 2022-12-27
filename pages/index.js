@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import PageTransition from "../components/Animations/Transition/PageTransition";
 import FloatingContribImage from "../components/Animations/FloatingImage";
 import { kUltra, kUrbanist } from "../lib/constants";
+import Head from "next/head";
 
 export default function Home() {
 	const router = useRouter();
@@ -35,6 +36,9 @@ export default function Home() {
 
 	return (
 		<>
+			<Head>
+				<title>Contrib 3D</title>
+			</Head>
 			<PageTransition>
 				<Flex
 					width={"full"}
