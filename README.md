@@ -36,6 +36,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## TODO
 
 - [ ] Handle error when invalid github handle is entered.
-- [ ] Add Contrib 3d logo to the navbar
-- [ ] Add contrib 3d logo as favicon
-- [ ] update the title of the webpage
+- [x] Add Contrib 3d logo to the navbar
+- [x] Add contrib 3d logo as favicon
+- [x] update the title of the webpage
