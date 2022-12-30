@@ -5,9 +5,9 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import Lighting from "../../components/Lighting";
 import Head from "next/head";
+import { UserCannotBeFound } from "../../components/Error";
 
 export default function ContribGraph({ data, handle }) {
-	//   console.log(JSON.stringify(data));
 	return (
 		<>
 			<Head>
@@ -22,12 +22,22 @@ export default function ContribGraph({ data, handle }) {
 						overflowY: "hidden",
 					}}
 				>
-					<Canvas>
-						<OrthographicCamera makeDefault zoom={25} position={[90, 50, 70]} />
-						<OrbitControls />
-						<Lighting />
-						<Graph data={data} handle={handle} />
-					</Canvas>
+					{!data ? (
+						<UserCannotBeFound
+							title={"Cannot find the user, Please check your github handle."}
+						/>
+					) : (
+						<Canvas>
+							<OrthographicCamera
+								makeDefault
+								zoom={25}
+								position={[90, 50, 70]}
+							/>
+							<OrbitControls />
+							<Lighting />
+							<Graph data={data} handle={handle} />
+						</Canvas>
+					)}
 				</div>
 			</PageTransition>
 		</>
