@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import Lottie from "react-lottie";
 import { kUrbanist } from "../../lib/constants";
 import animationData from "../../public/cannot_be_found.json";
@@ -13,14 +13,16 @@ export const UserCannotBeFound = ({ title }) => {
 			flexDirection={"column"}
 		>
 			<Box>
-				<Lottie
-					options={{
-						loop: true,
-						autoplay: true,
-						animationData: animationData,
-					}}
-					width={"500px"}
-				/>
+				<Link href={"/"}>
+					<Lottie
+						options={{
+							loop: true,
+							autoplay: true,
+							animationData: animationData,
+						}}
+						width={"500px"}
+					/>
+				</Link>
 			</Box>
 			<Text
 				className={kUrbanist.className}
