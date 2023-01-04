@@ -1,11 +1,11 @@
 import PageTransition from "../../components/Animations/Transition/PageTransition";
-import getContributionsData from "../../lib/getContribution";
 import Graph from "../../components/Graph";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import Lighting from "../../components/Lighting";
 import Head from "next/head";
 import { UserCannotBeFound } from "../../components/Error";
+import { fetchContribData } from "../../lib/fetchGithubData";
 
 export default function ContribGraph({ data, handle }) {
 	return (
@@ -35,7 +35,7 @@ export default function ContribGraph({ data, handle }) {
 							/>
 							<OrbitControls />
 							<Lighting />
-							<Graph data={data} handle={handle} />
+							<Graph data={data} />
 						</Canvas>
 					)}
 				</div>
@@ -46,8 +46,7 @@ export default function ContribGraph({ data, handle }) {
 
 export const getServerSideProps = async ({ params, res }) => {
 	const handle = params.handle;
-	const data = await getContributionsData(handle);
-
+	let data = await fetchContribData(handle);
 	return {
 		props: {
 			data,
