@@ -1,6 +1,6 @@
 const getContributionsData = async (username) => {
 	const headers = {
-		Authorization: `bearer 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`,
+		Authorization: `bearer <TOKEN>`,
 	};
 	const body = {
 		query: `query {
