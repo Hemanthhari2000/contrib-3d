@@ -41,8 +41,6 @@ let contribDaita = await getContributions(
   "fabchris01"
 );
 
-console.log(contribDaita.length);
-console.log(contribDaita);
 
 // THREE JS INIT
 const scene = new THREE.Scene();
@@ -91,16 +89,6 @@ scene.add(cameraHelper);
 
 const axesHelper = new THREE.AxesHelper(10);
 scene.add(axesHelper);
-
-// const gridHelper = new THREE.GridHelper(50, 50);
-// scene.add(gridHelper);
-
-// const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-// const cubeMaterial = new THREE.MeshPhongMaterial({ color: "red" });
-// const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-// cube.position.x = -10;
-// scene.add(cube);
-// console.log(cube);
 
 const btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
