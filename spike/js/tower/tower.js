@@ -22,26 +22,6 @@ const createBaseGeometry = () => {
   return new THREE.MeshPhongMaterial({ color: Constants.baseColor });
 };
 
-// const createBase = (scene) => {
-//   const baseGeometry = createBaseMaterial();
-//   baseGeometry.translate(0, 0.05, 0);
-//   const baseMaterial = createBaseGeometry();
-//   const towerBase = new THREE.Mesh(baseGeometry, baseMaterial);
-
-//   scene.add(towerBase);
-//   return scene;
-// };
-
-// const createTower = (scene) => {
-//   const towerGeometry = createTowerGeometry();
-//   towerGeometry.translate(0, 0.5, 0);
-//   const towerMaterial = createTowerMaterial();
-//   const tower = new THREE.Mesh(towerGeometry, towerMaterial);
-//   tower.scale.y = 2;
-
-//   scene.add(tower);
-//   return scene;
-// };
 
 class Tower {
   constructor(contributionData) {
@@ -61,14 +41,12 @@ class Tower {
       this.contributionData.contributionCount === 0
         ? 0.1
         : this.contributionData.contributionCount;
-    // console.log(this.contributionData.contributionCount);
     return tower;
   };
   createBase = (scene) => {
     const baseGeometry = new THREE.BoxGeometry(1, 0.1, 1);
     baseGeometry.translate(0, 0.05, 0);
     const baseMaterial = new THREE.MeshPhongMaterial({
-      // color: this.contributionData.color,
       color: "#808080",
     });
     const towerBase = new THREE.Mesh(baseGeometry, baseMaterial);
@@ -77,7 +55,6 @@ class Tower {
   };
 
   buildTower = (scene, xFactor, zFactor) => {
-    // console.log(this.contributionData);
     if (this.contributionData.contributionCount === 0) {
       const mesh = this.createBase(scene);
       mesh.position.x = (this.xSpace + this.offset) * xFactor;
