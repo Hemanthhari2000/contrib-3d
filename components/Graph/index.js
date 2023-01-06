@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter";
 import { saveAs } from "file-saver";
 
-import { Tower } from "../lib/tower";
+import { Tower } from "../../lib/tower";
 
 const Graph = ({ data }) => {
 	let [scene] = useState(() => new THREE.Scene());

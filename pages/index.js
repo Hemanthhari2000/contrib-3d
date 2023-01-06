@@ -23,7 +23,6 @@ export default function Home() {
 	const handleInputChange = (e) => setHandle(e.target.value);
 
 	const handleOnSubmit = () => {
-
 		// VALIDATION
 		if (!handle) {
 			setIsError(true);
@@ -47,7 +46,7 @@ export default function Home() {
 					<Text
 						className={kUltra.className}
 						textAlign={"center"}
-						fontSize={"40"}
+						fontSize={"55"}
 						fontWeight={"bold"}
 						letterSpacing={1.5}
 						lineHeight={1.6}
