@@ -11,7 +11,7 @@ export default function ContribGraph({ data, handle }) {
 	return (
 		<>
 			<Head>
-				<title>Contrib 3D - {handle}</title>
+				<title>{`Contrib 3D - ${handle}`}</title>
 			</Head>
 			<PageTransition>
 				<div

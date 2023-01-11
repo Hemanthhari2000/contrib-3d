@@ -34,7 +34,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Contrib 3D</title>
+				<title>{`Contrib 3D`}</title>
 			</Head>
 			<PageTransition>
 				<Flex
