@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import Lottie from "react-lottie";
-import { kUrbanist } from "../../lib/constants";
+import { kSecondaryFont } from "../../lib/constants";
 import animationData from "../../public/cannot_be_found.json";
 
 export const UserCannotBeFound = ({ title }) => {
@@ -25,7 +25,7 @@ export const UserCannotBeFound = ({ title }) => {
 				</Link>
 			</Box>
 			<Text
-				className={kUrbanist.className}
+				className={kSecondaryFont.className}
 				fontSize={20}
 				lineHeight={1.5}
 				letterSpacing={0.9}
