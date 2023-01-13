@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps, router }) {
 						<TriangleLoader />
 					) : (
 						<>
-							<Navbar />
+							
 							<Component {...pageProps} key={router.route} />
 						</>
 					)}

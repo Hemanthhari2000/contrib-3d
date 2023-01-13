@@ -6,13 +6,17 @@ import Lighting from "../../components/Lighting";
 import Head from "next/head";
 import { UserCannotBeFound } from "../../components/Error";
 import { fetchContribData } from "../../lib/fetchGithubData";
+import { useBreakpointValue } from "@chakra-ui/react";
+import Navbar from "../../components/Navbar";
 
 export default function ContribGraph({ data, handle }) {
+	let zoomValue = useBreakpointValue({ base: 10, md: 25 });
 	return (
 		<>
 			<Head>
 				<title>{`Contrib 3D - ${handle}`}</title>
 			</Head>
+			{!data ? <Navbar /> : <Navbar data={handle} />}
 			<PageTransition>
 				<div
 					style={{
@@ -30,7 +34,7 @@ export default function ContribGraph({ data, handle }) {
 						<Canvas>
 							<OrthographicCamera
 								makeDefault
-								zoom={25}
+								zoom={zoomValue}
 								position={[90, 50, 70]}
 							/>
 							<OrbitControls />

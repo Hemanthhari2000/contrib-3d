@@ -17,6 +17,7 @@ import PageTransition from "../components/Animations/Transition/PageTransition";
 import FloatingContribImage from "../components/Animations/FloatingImage";
 import { kPrimaryFont, kSecondaryFont } from "../lib/constants";
 import { AtIcon } from "../components/AtIcon";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
 	const router = useRouter();
@@ -39,6 +40,7 @@ export default function Home() {
 			<Head>
 				<title>{`Contrib 3D`}</title>
 			</Head>
+			<Navbar />
 			<PageTransition>
 				<Flex
 					width={"full"}
