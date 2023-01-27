@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { kSecondaryFont } from "../../lib/constants";
 import { FadeIn } from "../Animations/Transition/FadeIn";
+import { GithubButton } from "../Buttons/GithubButton";
 
 const Navbar = ({ data }) => {
 	let imageBoxSize = useBreakpointValue({ base: "50px", md: "80px" });
@@ -47,6 +48,7 @@ const Navbar = ({ data }) => {
 								</HStack>
 							</Link>
 						</HStack>
+						<GithubButton />
 					</Flex>
 				</Box>
 			</FadeIn>
