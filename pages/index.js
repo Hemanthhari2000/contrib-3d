@@ -30,7 +30,6 @@ export default function Home() {
 	const handleInputChange = (e) => setHandle(e.target.value);
 
 	const handleOnSubmit = () => {
-		// VALIDATION
 		if (!handle) {
 			setIsError(true);
 		} else {
