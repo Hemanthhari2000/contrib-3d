@@ -41,8 +41,8 @@ const Navbar = ({ data }) => {
 											className={kSecondaryFont.className}
 											fontSize={{ base: 20, md: 30 }}
 										>
-											{data}
-											{`'s`} Graph
+											{data.username}
+											{`'s`} {data.year} Graph
 										</Text>
 									)}
 								</HStack>
