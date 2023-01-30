@@ -7,7 +7,9 @@ import {
 	Input,
 	InputGroup,
 	InputLeftElement,
+	InputRightElement,
 	Text,
+	Select,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useState } from "react";
@@ -23,6 +25,7 @@ export default function Home() {
 	const router = useRouter();
 	const [handle, setHandle] = useState("");
 	const [isError, setIsError] = useState(false);
+	const [contribYear, setContribYear] = useState("2023");
 
 	const handleInputChange = (e) => setHandle(e.target.value);
 
@@ -31,7 +34,10 @@ export default function Home() {
 		if (!handle) {
 			setIsError(true);
 		} else {
-			router.push(`/contrib-graph/${handle}`);
+			router.push({
+				pathname: "/contrib-graph/[handle]",
+				query: { handle: handle, year: contribYear },
+			});
 		}
 	};
 
@@ -75,6 +81,20 @@ export default function Home() {
 									value={handle}
 									onChange={handleInputChange}
 								/>
+								<InputRightElement width="5.8rem">
+									<Select
+										size={"lg"}
+										defaultValue={"2023"}
+										onChange={(e) =>
+											setContribYear(e.target.selectedOptions[0].value)
+										}
+									>
+										<option value="2023">2023</option>
+										<option value="2022">2022</option>
+										<option value="2021">2021</option>
+										<option value="2020">2020</option>
+									</Select>
+								</InputRightElement>
 							</InputGroup>
 
 							{isError && (

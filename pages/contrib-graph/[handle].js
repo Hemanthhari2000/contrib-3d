@@ -9,14 +9,20 @@ import { fetchContribData } from "../../lib/fetchGithubData";
 import { useBreakpointValue } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
 
-export default function ContribGraph({ data, handle }) {
+export default function ContribGraph({ data }) {
 	let zoomValue = useBreakpointValue({ base: 10, md: 25 });
+	let user = data
+		? {
+				username: data.username,
+				year: data.year,
+		  }
+		: null;
 	return (
 		<>
 			<Head>
-				<title>{`Contrib 3D - ${handle}`}</title>
+				<title>{`Contrib 3D - ${user ? user.username : ""}`}</title>
 			</Head>
-			{!data ? <Navbar /> : <Navbar data={handle} />}
+			<Navbar data={user} />
 			<PageTransition>
 				<div
 					style={{
@@ -48,13 +54,13 @@ export default function ContribGraph({ data, handle }) {
 	);
 }
 
-export const getServerSideProps = async ({ params, res }) => {
-	const handle = params.handle;
-	let data = await fetchContribData(handle);
+export const getServerSideProps = async ({ query }) => {
+	const handle = query.handle;
+	const year = query.year;
+	let data = await fetchContribData(handle, year);
 	return {
 		props: {
 			data,
-			handle,
 		},
 	};
 };
