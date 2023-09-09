@@ -5,9 +5,9 @@ import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import Lighting from "../../components/Lighting";
 import Head from "next/head";
 import { UserCannotBeFound } from "../../components/Error";
-import { fetchContribData } from "../../lib/fetchGithubData";
 import { useBreakpointValue } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
+import fetchGithubContributionDataGraphql from "../../lib/fetchGithubContributionDataGraphql";
 
 export default function ContribGraph({ data }) {
 	let zoomValue = useBreakpointValue({ base: 10, md: 25 });
@@ -57,7 +57,7 @@ export default function ContribGraph({ data }) {
 export const getServerSideProps = async ({ query }) => {
 	const handle = query.handle;
 	const year = query.year;
-	let data = await fetchContribData(handle, year);
+	let data = await fetchGithubContributionDataGraphql(handle, year);
 	return {
 		props: {
 			data,
