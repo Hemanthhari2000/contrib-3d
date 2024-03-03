@@ -18,7 +18,12 @@ import Navbar from "@/components/Navbar";
 import FloatingContribImage from "@/components/Animations/FloatingImage";
 
 import { AtIcon } from "@/components/Icons/AtIcon";
-import { kPrimaryFont, kSecondaryFont } from "@/lib/constants";
+import {
+  kEnterImmersiveView,
+  kPrimaryFont,
+  kSecondaryFont,
+  kViewGeneratedGraph,
+} from "@/lib/constants";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Layout from "@/components/Layout";
@@ -31,11 +36,19 @@ export default function Home() {
 
   const handleInputChange = (e) => setHandle(e.target.value);
 
-  const handleOnSubmit = () => {
+  const handleOnSubmit = (view_type) => {
     if (!handle) {
       setIsError(true);
     } else {
-      router.push(`/contrib-graph/${handle}?year=${contribYear}`);
+      view_type === "contrib-view"
+        ? router.push(`/contrib-graph/${handle}?year=${contribYear}`)
+        : router.push(`/immersive-view/${handle}?year=${contribYear}`);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      handleOnSubmit();
     }
   };
 
@@ -76,6 +89,7 @@ export default function Home() {
                     _placeholder={{ opacity: 1, color: "gray.500" }}
                     value={handle}
                     onChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
                   />
                   <InputRightElement width="5.8rem">
                     <Select
@@ -100,16 +114,31 @@ export default function Home() {
                     </Flex>
                   </FormErrorMessage>
                 )}
-                <Flex w={"100%"} justifyContent={"center"}>
+                <Flex
+                  w={"100%"}
+                  justifyContent={"center"}
+                  flexDirection={{ base: "column", md: "row" }}
+                >
                   <Button
-                    m={5}
+                    m={{ base: 3, md: 5 }}
+                    className={kSecondaryFont.className}
+                    variant={"outline"}
+                    fontWeight={"medium"}
+                    letterSpacing={0.8}
+                    colorScheme={"teal"}
+                    onClick={() => handleOnSubmit("contrib-view")}
+                  >
+                    {kViewGeneratedGraph}
+                  </Button>
+                  <Button
+                    m={{ base: 3, md: 5 }}
                     className={kSecondaryFont.className}
                     fontWeight={"medium"}
                     letterSpacing={0.8}
                     colorScheme={"teal"}
-                    onClick={handleOnSubmit}
+                    onClick={() => handleOnSubmit("immersive-view")}
                   >
-                    Generate Graph
+                    {kEnterImmersiveView}
                   </Button>
                 </Flex>
               </FormControl>

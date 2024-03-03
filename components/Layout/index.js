@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         className="Layout-wrapper"
         maxW={"container.lg"}
         h={"900px"}
-        pt={"15.1rem"}
+        pt={{ base: "0.1rem", md: "15.1rem" }}
       >
         <Flex
           w={"full"}
