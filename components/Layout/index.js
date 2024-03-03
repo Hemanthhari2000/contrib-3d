@@ -1,9 +1,16 @@
+"use client";
+
 import { Container, Flex } from "@chakra-ui/react";
 
-const Layout = ({ children, router }) => {
+const Layout = ({ children }) => {
   return (
     <>
-      <Container maxW={"container.lg"} h={"900px"} pt={16}>
+      <Container
+        className="Layout-wrapper"
+        maxW={"container.lg"}
+        h={"900px"}
+        pt={"15.1rem"}
+      >
         <Flex
           w={"full"}
           h={"full"}
