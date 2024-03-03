@@ -15,12 +15,9 @@ export default function RootLayout({ children }) {
           padding: "0",
           boxSizing: "border-box",
           height: "100vh",
-          border:"2px solid blue" 
         }}
       >
-        <Layout>
-          <Providers>{children}</Providers>
-        </Layout>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

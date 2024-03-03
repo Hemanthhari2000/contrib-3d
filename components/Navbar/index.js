@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { kSecondaryFont } from "../../lib/constants";
+import { kPrimaryFont, kSecondaryFont } from "../../lib/constants";
 import { FadeIn } from "../Animations/Transition/FadeIn";
 import ColorModeButton from "../Buttons/ColorModeButton";
 import { GithubButton } from "../Buttons/GithubButton";
@@ -32,7 +32,7 @@ const Navbar = ({ data }) => {
                   />
                   {!data ? (
                     <Text
-                      className={kSecondaryFont.className}
+                      className={kPrimaryFont.className}
                       fontSize={{ base: 20, md: 30 }}
                       fontWeight={"semibold"}
                       letterSpacing={1.5}

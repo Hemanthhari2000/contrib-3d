@@ -1,3 +1,5 @@
+"use client";
+
 import { button, useControls } from "leva";
 import { useEffect, useState } from "react";
 import * as THREE from "three";
