@@ -12,6 +12,7 @@ import {
   InputRightElement,
   Text,
   Select,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import PageTransition from "@/components/Animations/Transition/PageTransition";
 import Navbar from "@/components/Navbar";
@@ -33,6 +34,10 @@ export default function Home() {
   const [handle, setHandle] = useState("");
   const [isError, setIsError] = useState(false);
   const [contribYear, setContribYear] = useState("2023");
+  const isMobileView = useBreakpointValue({
+    base: true,
+    md: false,
+  });
 
   const handleInputChange = (e) => setHandle(e.target.value);
 
@@ -122,7 +127,7 @@ export default function Home() {
                   <Button
                     m={{ base: 3, md: 5 }}
                     className={kSecondaryFont.className}
-                    variant={"outline"}
+                    variant={isMobileView ? "solid" : "outline"}
                     fontWeight={"medium"}
                     letterSpacing={0.8}
                     colorScheme={"teal"}
@@ -130,16 +135,18 @@ export default function Home() {
                   >
                     {kViewGeneratedGraph}
                   </Button>
-                  <Button
-                    m={{ base: 3, md: 5 }}
-                    className={kSecondaryFont.className}
-                    fontWeight={"medium"}
-                    letterSpacing={0.8}
-                    colorScheme={"teal"}
-                    onClick={() => handleOnSubmit("immersive-view")}
-                  >
-                    {kEnterImmersiveView}
-                  </Button>
+                  {isMobileView ? null : (
+                    <Button
+                      m={{ base: 3, md: 5 }}
+                      className={kSecondaryFont.className}
+                      fontWeight={"medium"}
+                      letterSpacing={0.8}
+                      colorScheme={"teal"}
+                      onClick={() => handleOnSubmit("immersive-view")}
+                    >
+                      {kEnterImmersiveView}
+                    </Button>
+                  )}
                 </Flex>
               </FormControl>
             </Box>
