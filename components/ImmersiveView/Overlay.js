@@ -4,8 +4,10 @@ import { Box, Button, Flex, Kbd, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { kSecondaryFont } from "@/lib/constants";
+import { useRouter } from "next/navigation";
 
 export default function Overlay({ showInstructions }) {
+  const router = useRouter();
   return (
     <Flex
       display={showInstructions ? "flex" : "none"}
@@ -45,13 +47,18 @@ export default function Overlay({ showInstructions }) {
             Exit: <Kbd>Esc</Kbd>
           </Text>
         </Box>
-        <Button
-          id="immersive-view-enter-btn"
-          pointerEvents={"auto"}
-          mt={"20px"}
-        >
-          Enter View
-        </Button>
+        <Flex mt={"20px"} justifyContent={"space-between"}>
+          <Button id="immersive-view-enter-btn" pointerEvents={"auto"}>
+            Enter View
+          </Button>
+          <Button
+            ml={"20px"}
+            pointerEvents={"auto"}
+            onClick={() => router.push("/")}
+          >
+            Back
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
   );
