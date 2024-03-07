@@ -5,7 +5,7 @@ import BaseBox from "../ImmersiveView/Box";
 import {
   getSaturatedColorCodesBasedOnCount,
   roundOff,
-} from "@/lib/immersiveViewHelper";
+} from "@/lib/helpers/immersiveViewHelper";
 
 const GraphBox = ({ data }) => {
   var contribTowers = [];

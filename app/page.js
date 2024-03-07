@@ -31,12 +31,16 @@ import {
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Layout from "@/components/Layout";
+import { dateRangeOptions } from "@/lib/helpers/homePageHelper";
 
 export default function Home() {
   const router = useRouter();
+
   const [handle, setHandle] = useState("");
   const [isError, setIsError] = useState(false);
-  const [contribYear, setContribYear] = useState("2023");
+  const [contribYear, setContribYear] = useState(
+    new Date().getFullYear().toString()
+  );
   const isMobileView = useBreakpointValue({
     base: true,
     md: false,
@@ -102,15 +106,12 @@ export default function Home() {
                   <InputRightElement width="5.8rem">
                     <Select
                       size={"lg"}
-                      defaultValue={"2023"}
+                      defaultValue={contribYear}
                       onChange={(e) =>
                         setContribYear(e.target.selectedOptions[0].value)
                       }
                     >
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
+                      {dateRangeOptions(contribYear)}
                     </Select>
                   </InputRightElement>
                 </InputGroup>
