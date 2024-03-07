@@ -1,14 +1,15 @@
 "use client";
 
-import { useBreakpointValue } from "@chakra-ui/react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import Lighting from "../../components/Lighting";
 
 import Navbar from "../Navbar";
 import PageTransition from "../Animations/Transition/PageTransition";
-import { UserCannotBeFound } from "../Error";
+import UserCannotBeFound from "../Error";
 import Graph from ".";
+import { kTextUserCannotBeFound } from "@/lib/constants";
 
 export default function GraphView({ data }) {
   let zoomValue = useBreakpointValue({ base: 10, md: 25 });
@@ -22,18 +23,9 @@ export default function GraphView({ data }) {
     <>
       <Navbar data={user} />
       <PageTransition>
-        <div
-          style={{
-            width: "100vw",
-            height: "100vh",
-            overflowX: "hidden",
-            overflowY: "hidden",
-          }}
-        >
+        <Box width="100vw" height="100vh" overflowX="hidden" overflowY="hidden">
           {!data ? (
-            <UserCannotBeFound
-              title={"Cannot find the user, Please check your github handle."}
-            />
+            <UserCannotBeFound title={kTextUserCannotBeFound} />
           ) : (
             <Canvas>
               <OrthographicCamera
@@ -46,7 +38,7 @@ export default function GraphView({ data }) {
               <Graph data={data} />
             </Canvas>
           )}
-        </div>
+        </Box>
       </PageTransition>
     </>
   );

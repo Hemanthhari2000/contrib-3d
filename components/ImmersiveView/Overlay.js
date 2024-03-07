@@ -3,7 +3,12 @@
 import { Box, Button, Flex, Kbd, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { kSecondaryFont } from "@/lib/constants";
+import {
+  kSecondaryFont,
+  kTextImmersiveViewOverlayHeading,
+  kTextOverlayBackBtn,
+  kTextOverlayEnterViewBtn,
+} from "@/lib/constants";
 import { useRouter } from "next/navigation";
 
 export default function Overlay({ showInstructions }) {
@@ -32,7 +37,7 @@ export default function Overlay({ showInstructions }) {
         className={kSecondaryFont.className}
         fontWeight={"semibold"}
       >
-        <Text fontSize={"4xl"}>Immersive View</Text>
+        <Text fontSize={"4xl"}>{kTextImmersiveViewOverlayHeading}</Text>
         <Box pt={"20px"}>
           <Text>
             Move: <Kbd>W</Kbd> <Kbd>A</Kbd> <Kbd>S</Kbd> <Kbd>D</Kbd>
@@ -49,14 +54,14 @@ export default function Overlay({ showInstructions }) {
         </Box>
         <Flex mt={"20px"} justifyContent={"space-between"}>
           <Button id="immersive-view-enter-btn" pointerEvents={"auto"}>
-            Enter View
+            {kTextOverlayEnterViewBtn}
           </Button>
           <Button
             ml={"20px"}
             pointerEvents={"auto"}
             onClick={() => router.push("/")}
           >
-            Back
+            {kTextOverlayBackBtn}
           </Button>
         </Flex>
       </Flex>

@@ -20,10 +20,13 @@ import FloatingContribImage from "@/components/Animations/FloatingImage";
 
 import { AtIcon } from "@/components/Icons/AtIcon";
 import {
-  kEnterImmersiveView,
+  kTextEnterImmersiveView,
   kPrimaryFont,
   kSecondaryFont,
-  kViewGeneratedGraph,
+  kTextViewGeneratedGraph,
+  kTextHomePageIntroText,
+  kTextHomePageInputPlaceholder,
+  kTextHomePageInputErrorMessage,
 } from "@/lib/constants";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -78,7 +81,7 @@ export default function Home() {
                 lineHeight={1.6}
                 py={5}
               >
-                Your Github Contribution Graph in 3D
+                {kTextHomePageIntroText}
               </Text>
             </Box>
             <Box w="80%">
@@ -90,7 +93,7 @@ export default function Home() {
                   <Input
                     type={"text"}
                     className={kSecondaryFont.className}
-                    placeholder="github-username"
+                    placeholder={kTextHomePageInputPlaceholder}
                     _placeholder={{ opacity: 1, color: "gray.500" }}
                     value={handle}
                     onChange={handleInputChange}
@@ -115,7 +118,7 @@ export default function Home() {
                 {isError && (
                   <FormErrorMessage>
                     <Flex w={"100%"} justifyContent={"center"}>
-                      Github Handle is Required.
+                      {kTextHomePageInputErrorMessage}
                     </Flex>
                   </FormErrorMessage>
                 )}
@@ -133,7 +136,7 @@ export default function Home() {
                     colorScheme={"teal"}
                     onClick={() => handleOnSubmit("contrib-view")}
                   >
-                    {kViewGeneratedGraph}
+                    {kTextViewGeneratedGraph}
                   </Button>
                   {isMobileView ? null : (
                     <Button
@@ -144,7 +147,7 @@ export default function Home() {
                       colorScheme={"teal"}
                       onClick={() => handleOnSubmit("immersive-view")}
                     >
-                      {kEnterImmersiveView}
+                      {kTextEnterImmersiveView}
                     </Button>
                   )}
                 </Flex>
