@@ -11,7 +11,7 @@ const GraphBox = ({ data }) => {
 	var contribTowers = [];
 
 	let pos = new THREE.Vector3(-27.4, 0, -3.3);
-	console.log('Contribution Data: ', data);
+	// console.log('Contribution Data: ', data);
 	for (let j = 0; j < data.contributions.length; j++) {
 		for (let i = 0; i < data.contributions[j].length; i++) {
 			let contributionCount = data.contributions[j][i].contributionCount;

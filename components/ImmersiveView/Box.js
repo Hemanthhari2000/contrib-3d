@@ -4,8 +4,8 @@ const BaseBox = ({ ...props }) => {
 	const [ref] = useBox(() => ({
 		type: 'Static',
 		mass: 1,
-		onCollide: e => {
-			console.log(e);
+		onCollide: () => {
+			// console.log(e);
 		},
 		...props
 	}));
