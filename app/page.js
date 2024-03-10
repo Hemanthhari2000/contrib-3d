@@ -111,7 +111,7 @@ export default function Home() {
 												setContribYear(e.target.selectedOptions[0].value)
 											}
 										>
-											{dateRangeOptions(contribYear)}
+											{dateRangeOptions()}
 										</Select>
 									</InputRightElement>
 								</InputGroup>
