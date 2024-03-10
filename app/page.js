@@ -41,6 +41,8 @@ export default function Home() {
 	const [contribYear, setContribYear] = useState(
 		new Date().getFullYear().toString()
 	);
+	const [isContribGraphLoading, setIsContribGraphLoading] = useState(false);
+	const [isImmersiveViewLoading, setisImmersiveViewLoading] = useState(false);
 	const isMobileView = useBreakpointValue({
 		base: true,
 		md: false
@@ -51,10 +53,12 @@ export default function Home() {
 	const handleOnSubmit = view_type => {
 		if (!handle) {
 			setIsError(true);
+		} else if (view_type === 'contrib-view') {
+			setIsContribGraphLoading(true);
+			router.push(`/contrib-graph/${handle}?year=${contribYear}`);
 		} else {
-			view_type === 'contrib-view'
-				? router.push(`/contrib-graph/${handle}?year=${contribYear}`)
-				: router.push(`/immersive-view/${handle}?year=${contribYear}`);
+			setisImmersiveViewLoading(true);
+			router.push(`/immersive-view/${handle}?year=${contribYear}`);
 		}
 	};
 
@@ -129,6 +133,7 @@ export default function Home() {
 									flexDirection={{ base: 'column', md: 'row' }}
 								>
 									<Button
+										isLoading={isContribGraphLoading}
 										m={{ base: 3, md: 5 }}
 										className={kSecondaryFont.className}
 										variant={isMobileView ? 'solid' : 'outline'}
@@ -141,6 +146,7 @@ export default function Home() {
 									</Button>
 									{isMobileView ? null : (
 										<Button
+											isLoading={isImmersiveViewLoading}
 											m={{ base: 3, md: 5 }}
 											className={kSecondaryFont.className}
 											fontWeight={'medium'}
