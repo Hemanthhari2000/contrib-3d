@@ -1,15 +1,16 @@
 'use client';
 
 import { Box, useBreakpointValue } from '@chakra-ui/react';
-import { Canvas } from '@react-three/fiber';
 import { OrbitControls, OrthographicCamera } from '@react-three/drei';
-import Lighting from '../../components/Lighting';
+import { Canvas } from '@react-three/fiber';
 
-import Navbar from '../Navbar';
+import { kTextUserCannotBeFound } from '@/lib/constants';
+
+import Lighting from '../../components/Lighting';
 import PageTransition from '../Animations/Transition/PageTransition';
 import UserCannotBeFound from '../Error';
+import Navbar from '../Navbar';
 import Graph from '.';
-import { kTextUserCannotBeFound } from '@/lib/constants';
 
 export default function GraphView({ data }) {
 	let zoomValue = useBreakpointValue({ base: 10, md: 25 });

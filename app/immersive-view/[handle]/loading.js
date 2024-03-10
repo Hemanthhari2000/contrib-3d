@@ -1,6 +1,7 @@
 'use client';
-import TriangleLoader from '@/components/Animations/Loading/DnaLoading';
 import { Flex } from '@chakra-ui/react';
+
+import TriangleLoader from '@/components/Animations/Loading/DnaLoading';
 
 export default function ImmersiveViewLoading() {
 	return (

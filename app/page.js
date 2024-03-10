@@ -10,27 +10,26 @@ import {
 	InputGroup,
 	InputLeftElement,
 	InputRightElement,
-	Text,
 	Select,
+	Text,
 	useBreakpointValue
 } from '@chakra-ui/react';
-import PageTransition from '@/components/Animations/Transition/PageTransition';
-import Navbar from '@/components/Navbar';
-import FloatingContribImage from '@/components/Animations/FloatingImage';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
+import FloatingContribImage from '@/components/Animations/FloatingImage';
+import PageTransition from '@/components/Animations/Transition/PageTransition';
 import { AtIcon } from '@/components/Icons/AtIcon';
+import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import {
-	kTextEnterImmersiveView,
 	kPrimaryFont,
 	kSecondaryFont,
-	kTextViewGeneratedGraph,
-	kTextHomePageIntroText,
+	kTextEnterImmersiveView,
+	kTextHomePageInputErrorMessage,
 	kTextHomePageInputPlaceholder,
-	kTextHomePageInputErrorMessage
-} from '@/lib/constants';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Layout from '@/components/Layout';
+	kTextHomePageIntroText,
+	kTextViewGeneratedGraph} from '@/lib/constants';
 import { dateRangeOptions } from '@/lib/helpers/homePageHelper';
 
 export default function Home() {

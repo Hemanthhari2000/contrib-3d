@@ -1,10 +1,10 @@
 'use client';
 
+import { saveAs } from 'file-saver';
 import { button, useControls } from 'leva';
 import { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
-import { saveAs } from 'file-saver';
 
 import { Tower } from '../../lib/tower';
 

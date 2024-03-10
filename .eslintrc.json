@@ -1,4 +1,9 @@
 {
 	"extends": ["next/core-web-vitals", "eslint:recommended", "prettier"],
-	"rules": { "no-console": "error" }
+	"plugins": ["simple-import-sort"],
+	"rules": {
+		"no-console": "error",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error"
+	}
 }

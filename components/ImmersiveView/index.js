@@ -3,12 +3,13 @@
 import { Box } from '@chakra-ui/react';
 import { Sky, Stats } from '@react-three/drei';
 
-import BaseScene from '@/components/ImmersiveView/Scene';
-import BaseCharacter from '@/components/ImmersiveView/Character';
 import GraphBox from '@/components/Graph/GraphBox';
+import BaseCharacter from '@/components/ImmersiveView/Character';
+import BaseScene from '@/components/ImmersiveView/Scene';
+
+import PageTransition from '../Animations/Transition/PageTransition';
 import UserCannotBeFound from '../Error';
 import Navbar from '../Navbar';
-import PageTransition from '../Animations/Transition/PageTransition';
 
 export default function ImmersiveView({ data }) {
 	const user = data ? { username: data.username, year: data.year } : null;

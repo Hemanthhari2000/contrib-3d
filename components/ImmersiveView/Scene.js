@@ -1,11 +1,11 @@
 'use client';
-import { Canvas } from '@react-three/fiber';
-import { Loader, PointerLockControls } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
-import { useState, useEffect } from 'react';
+import { Loader, PointerLockControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { useEffect,useState } from 'react';
 
-import Lights from './Lights';
 import Floor from './Floor';
+import Lights from './Lights';
 import Overlay from './Overlay';
 
 const BaseScene = ({ children }) => {

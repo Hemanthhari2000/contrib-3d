@@ -1,5 +1,6 @@
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import Lottie from 'react-lottie';
+
 import { kSecondaryFont } from '../../lib/constants';
 import animationData from '../../public/cannot_be_found.json';
 

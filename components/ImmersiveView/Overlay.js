@@ -1,6 +1,7 @@
 'use client';
 
 import { Box, Button, Flex, Kbd, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
 
 import {
 	kSecondaryFont,
@@ -8,7 +9,6 @@ import {
 	kTextOverlayBackBtn,
 	kTextOverlayEnterViewBtn
 } from '@/lib/constants';
-import { useRouter } from 'next/navigation';
 
 export default function Overlay({ showInstructions }) {
 	const router = useRouter();

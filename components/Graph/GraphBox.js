@@ -1,11 +1,12 @@
 'use client';
 import * as THREE from 'three';
 
-import BaseBox from '../ImmersiveView/Box';
 import {
 	getSaturatedColorCodesBasedOnCount,
 	roundOff
 } from '@/lib/helpers/immersiveViewHelper';
+
+import BaseBox from '../ImmersiveView/Box';
 
 const GraphBox = ({ data }) => {
 	var contribTowers = [];

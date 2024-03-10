@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import { Image } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 const FloatingImage = ({ src = 'images/contrib.png', width = '350px' }) => {
 	return (
