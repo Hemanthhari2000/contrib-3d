@@ -30,7 +30,7 @@ const GraphBox = ({ data }) => {
 			);
 		}
 	}
-	return { contribTowers };
+	return <>{contribTowers}</>;
 };
 
 export default GraphBox;
