@@ -1,19 +1,19 @@
-import { useHelper } from "@react-three/drei";
-import { useRef } from "react";
-import { DirectionalLightHelper, PointLightHelper } from "three";
+import { useHelper } from '@react-three/drei';
+import { useRef } from 'react';
+import { DirectionalLightHelper, PointLightHelper } from 'three';
 
 const Lighting = () => {
 	const directionalLightHelper1 = useRef();
-	useHelper(directionalLightHelper1, DirectionalLightHelper, "red");
+	useHelper(directionalLightHelper1, DirectionalLightHelper, 'red');
 
 	const DirectionalLightHelper2 = useRef();
-	useHelper(DirectionalLightHelper2, DirectionalLightHelper, "cyan");
+	useHelper(DirectionalLightHelper2, DirectionalLightHelper, 'cyan');
 
 	const DirectionalLightHelper3 = useRef();
-	useHelper(DirectionalLightHelper3, DirectionalLightHelper, "green");
+	useHelper(DirectionalLightHelper3, DirectionalLightHelper, 'green');
 
 	const PointLightHelper1 = useRef();
-	useHelper(PointLightHelper1, PointLightHelper, 1.5, "yellow");
+	useHelper(PointLightHelper1, PointLightHelper, 1.5, 'yellow');
 	return (
 		<>
 			<directionalLight
@@ -36,7 +36,7 @@ const Lighting = () => {
 				// ref={PointLightHelper1}
 				position={[0, 15, 0]}
 				intensity={1}
-				color={"#ffffff"}
+				color={'#ffffff'}
 			/>
 		</>
 	);

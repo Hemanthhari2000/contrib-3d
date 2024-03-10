@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { button, useControls } from "leva";
-import { useEffect, useState } from "react";
-import * as THREE from "three";
-import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter";
-import { saveAs } from "file-saver";
+import { button, useControls } from 'leva';
+import { useEffect, useState } from 'react';
+import * as THREE from 'three';
+import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
+import { saveAs } from 'file-saver';
 
-import { Tower } from "../../lib/tower";
+import { Tower } from '../../lib/tower';
 
 const Graph = ({ data }) => {
 	let [scene] = useState(() => new THREE.Scene());
@@ -19,7 +19,7 @@ const Graph = ({ data }) => {
 			scene,
 			function (gltfJson) {
 				const jsonString = JSON.stringify(gltfJson);
-				const blob = new Blob([jsonString], { type: "application/json" });
+				const blob = new Blob([jsonString], { type: 'application/json' });
 				saveAs(blob, `${handle}'s_graph.glb`);
 			},
 			{ binary: true }
@@ -27,7 +27,7 @@ const Graph = ({ data }) => {
 	}
 
 	useControls({
-		"Download Graph": button((get) => onLevaButtonClick()),
+		'Download Graph': button(() => onLevaButtonClick())
 	});
 
 	useEffect(() => {
