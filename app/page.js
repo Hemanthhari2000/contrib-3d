@@ -29,7 +29,8 @@ import {
 	kTextHomePageInputErrorMessage,
 	kTextHomePageInputPlaceholder,
 	kTextHomePageIntroText,
-	kTextViewGeneratedGraph} from '@/lib/constants';
+	kTextViewGeneratedGraph
+} from '@/lib/constants';
 import { dateRangeOptions } from '@/lib/helpers/homePageHelper';
 
 export default function Home() {

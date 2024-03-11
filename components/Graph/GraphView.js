@@ -3,6 +3,7 @@
 import { Box, useBreakpointValue } from '@chakra-ui/react';
 import { OrbitControls, OrthographicCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Leva } from 'leva';
 
 import { kTextUserCannotBeFound } from '@/lib/constants';
 
@@ -24,6 +25,9 @@ export default function GraphView({ data }) {
 		<>
 			<Navbar data={user} />
 			<PageTransition>
+				<Box position={'absolute'} top={'200px'} right={'10'}>
+					<Leva fill />
+				</Box>
 				<Box width="100vw" height="100vh" overflowX="hidden" overflowY="hidden">
 					{!data ? (
 						<UserCannotBeFound title={kTextUserCannotBeFound} />

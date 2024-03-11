@@ -2,6 +2,7 @@
 
 import {
 	Box,
+	Button,
 	Flex,
 	HStack,
 	Image,
@@ -9,6 +10,8 @@ import {
 	useBreakpointValue
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 import {
 	kPrimaryFont,
@@ -21,6 +24,13 @@ import { GithubButton } from '../Buttons/GithubButton';
 
 const Navbar = ({ data }) => {
 	let imageBoxSize = useBreakpointValue({ base: '50px', md: '80px' });
+	const isMobileView = useBreakpointValue({
+		base: true,
+		md: false
+	});
+	const [isImmersiveViewLoading, setisImmersiveViewLoading] = useState(false);
+	const router = useRouter();
+
 	return (
 		<Box as="nav" position={'absolute'} top={0} left={0} w={'100%'} zIndex={10}>
 			<FadeIn>
@@ -57,6 +67,24 @@ const Navbar = ({ data }) => {
 							</Link>
 						</HStack>
 						<HStack mr={{ base: 5, md: 20 }}>
+							{isMobileView ? null : !data ? null : (
+								<Button
+									isLoading={isImmersiveViewLoading}
+									mr={{ base: 3, md: 5 }}
+									className={kSecondaryFont.className}
+									fontWeight={'medium'}
+									letterSpacing={0.8}
+									colorScheme={'teal'}
+									onClick={() => {
+										setisImmersiveViewLoading(true);
+										router.push(
+											`/immersive-view/${data.username}?year=${data.year}`
+										);
+									}}
+								>
+									View Immersive View
+								</Button>
+							)}
 							<ColorModeButton />
 							<GithubButton />
 						</HStack>

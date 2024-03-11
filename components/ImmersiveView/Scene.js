@@ -2,7 +2,7 @@
 import { Physics } from '@react-three/cannon';
 import { Loader, PointerLockControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Floor from './Floor';
 import Lights from './Lights';

@@ -52,12 +52,19 @@ export default function Overlay({ showInstructions }) {
 					</Text>
 				</Box>
 				<Flex mt={'20px'} justifyContent={'space-between'}>
-					<Button id="immersive-view-enter-btn" pointerEvents={'auto'}>
+					<Button
+						id="immersive-view-enter-btn"
+						pointerEvents={'auto'}
+						variant={'solid'}
+						colorScheme={'teal'}
+					>
 						{kTextOverlayEnterViewBtn}
 					</Button>
 					<Button
 						ml={'20px'}
 						pointerEvents={'auto'}
+						variant={'outline'}
+						colorScheme={'teal'}
 						onClick={() => router.push('/')}
 					>
 						{kTextOverlayBackBtn}
