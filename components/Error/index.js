@@ -1,26 +1,27 @@
-import { Box, Flex, Link, Text } from "@chakra-ui/react";
-import Lottie from "react-lottie";
-import { kSecondaryFont } from "../../lib/constants";
-import animationData from "../../public/cannot_be_found.json";
+import { Box, Flex, Link, Text } from '@chakra-ui/react';
+import Lottie from 'react-lottie';
 
-export const UserCannotBeFound = ({ title }) => {
+import { kSecondaryFont } from '../../lib/constants';
+import animationData from '../../public/cannot_be_found.json';
+
+const UserCannotBeFound = ({ title }) => {
 	return (
 		<Flex
-			h={"100%"}
-			w={"100%"}
-			justifyContent={"center"}
-			alignItems={"center"}
-			flexDirection={"column"}
+			h={'100%'}
+			w={'100%'}
+			justifyContent={'center'}
+			alignItems={'center'}
+			flexDirection={'column'}
 		>
 			<Box>
-				<Link href={"/"}>
+				<Link href={'/'}>
 					<Lottie
 						options={{
 							loop: true,
 							autoplay: true,
-							animationData: animationData,
+							animationData: animationData
 						}}
-						width={"500px"}
+						width={'500px'}
 					/>
 				</Link>
 			</Box>
@@ -35,3 +36,5 @@ export const UserCannotBeFound = ({ title }) => {
 		</Flex>
 	);
 };
+
+export default UserCannotBeFound;

@@ -1,32 +1,40 @@
 {
-  "name": "contrib-3d",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@chakra-ui/react": "^2.3.7",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@next/font": "^13.1.1",
-    "@react-three/drei": "^9.40.0",
-    "@react-three/fiber": "^8.9.1",
-    "cheerio": "^1.0.0-rc.12",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.2",
-    "file-saver": "^2.0.5",
-    "framer-motion": "^7.6.5",
-    "got": "^12.5.3",
-    "leva": "^0.9.34",
-    "next": "13.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-loader-spinner": "^5.3.4",
-    "react-lottie": "^1.2.3",
-    "three": "^0.146.0"
-  }
+	"name": "contrib-3d",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"format": "prettier --write .",
+		"format:check": "prettier --check ."
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.3.7",
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"@next/font": "^13.1.1",
+		"@react-three/cannon": "^6.6.0",
+		"@react-three/drei": "^9.40.0",
+		"@react-three/fiber": "^8.9.1",
+		"cheerio": "^1.0.0-rc.12",
+		"eslint": "^8.57.0",
+		"eslint-config-next": "13.0.2",
+		"eslint-plugin-simple-import-sort": "^12.0.0",
+		"file-saver": "^2.0.5",
+		"framer-motion": "^7.6.5",
+		"got": "^12.5.3",
+		"next": "^13",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-loader-spinner": "^5.3.4",
+		"react-lottie": "^1.2.3",
+		"three": "^0.146.0"
+	},
+	"devDependencies": {
+		"eslint-config-prettier": "^9.1.0",
+		"leva": "^0.9.35",
+		"prettier": "3.2.5"
+	}
 }

@@ -2,14 +2,13 @@
 
 import { Container, Flex } from '@chakra-ui/react';
 
-const Layout = ({ children }) => {
+export default function ContribViewLayout({ children }) {
 	return (
 		<>
 			<Container
-				className="Layout-wrapper"
+				className="ContribViewLayout-wrapper"
 				maxW={'container.lg'}
 				h={'900px'}
-				pt={{ base: '0.1rem', md: '15.1rem' }}
 			>
 				<Flex
 					w={'full'}
@@ -22,6 +21,4 @@ const Layout = ({ children }) => {
 			</Container>
 		</>
 	);
-};
-
-export default Layout;
+}
