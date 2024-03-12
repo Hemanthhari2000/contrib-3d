@@ -45,9 +45,6 @@ export default function Overlay({ showInstructions }) {
 						Jump: <Kbd>Space</Kbd>
 					</Text>
 					<Text>
-						Click: <Kbd>Left Click</Kbd>
-					</Text>
-					<Text>
 						Exit: <Kbd>Esc</Kbd>
 					</Text>
 				</Box>
